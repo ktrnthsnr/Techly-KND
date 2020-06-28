@@ -8,7 +8,7 @@ https://github.com/ktrnthsnr/Techly-KND
 [Techly-KND](https://ktrnthsnr-techly.herokuapp.com/)
 
 ## Description 
-The Node.js application is a social networking forums style site where developers may add questions in posts or comment on other developers' posts. This application follows the MVC paradigm in it's structure and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
+The Node.js application is a social networking forums style site where developers may add questions in posts or comment on other developers' posts. This application follows the MVC paradigm in its structure and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
 
 ## Table of Contents
 * [Installation](#installation)
@@ -21,13 +21,13 @@ The Node.js application is a social networking forums style site where developer
 ## Installation 
 - The user may clone this repository from GitHub. This application requires Node.js, Express.js, Sequelize, mysql2, connection-session/express-session, and Jest. 
 - If cloning the repo, run `npm i` to install all the dependent modules. 
-- To connect to the database run `mysql -u root -p` and enter password, the same you'll add to your .env file. A sample .env_sample includes the info you will need in your .env file (but remove the `_sample` from the filename).
+- To connect to the database run `mysql -u root -p` and enter your password, the same you'll add to your .env file. A sample .env_sample is included which contains the info you will need in your .env file (but you'd just remove the `_sample` from the filename).
 - Then run `source schema.sql` to create the database.
-- To connect to the Express server run `npm start` from the bash terminal.
-- After running `npm start` the tables will be created with no rows. To add the rows, you may run the INSERT statements through the mysql command line, located in the mysql dump db/techly_db3.sql
+- To start the Express server, run `npm start` from the bash terminal.
+- After running `npm start` the tables will be created with no rows. To add the rows, you may run the INSERT statements through the mysql command line, located at db/techly_knd_db3.sql
 
 ## Usage 
-This application will allow users to sign up, then login and add posts, comments to other posts, and vote up useful posts. Users will also be able to search by keywords for any related technical issue. <br>
+This application will allow users to sign up, then login and add posts, comments to other posts, and vote up useful posts. Users will also be able to search by keywords for any related technical issue, and view a user's profile. <br>
 The site is currently hosted on the Heroku platform - [Techly](https://ktrnthsnr-techly.herokuapp.com/).<br>
 <img src="assets/images/Techly-KND.jpg">
 - Attached is a walkthrough of the simple social forum type application
