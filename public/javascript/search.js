@@ -21,6 +21,4 @@ const response = await fetch( `/search/${search}` , {
   }
 }
 
-
-// document.querySelector('.search-form').addEventListener('submit', searchFormHandler);
 document.querySelector('#search-form').addEventListener('submit', searchFormHandler);

@@ -2,7 +2,7 @@
 -- created by, for questions, contact by https://github.com/ktrnthsnr
 
 
---      This sample start script will update the homepage 
+--      This sample start script (only using the INSERTS as Sequelize will create the tables)
 --      with a few sample users\posts\comments\votes
 --------------------------------------------------------------------------
 
