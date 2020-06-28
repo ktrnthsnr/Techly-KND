@@ -48,6 +48,6 @@ app.use(passport.session());
 app.use(routes);
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {    // true will recrete the tables, set back to false after creating
+sequelize.sync({ force: false }).then(() => {    // true will recrete the tables, set back to false after creating
   app.listen(PORT, () => console.log('Now listening on port ' + PORT));
 });

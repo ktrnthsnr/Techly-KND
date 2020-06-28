@@ -1,22 +1,28 @@
--- Below are a few ways to populate your mysql database, or move content from 
--- one location to another, which may be needed if you have multiple environments.
--- Here is a walkthrough of this process: https://drive.google.com/file/d/18XO3RjJq_bCuStcwmP2QGmRdj3OFiUJv/view
+-- This doc: Below are a few ways to populate your mysql database, or move content from 
+-- one environment to another, or if you need to quicly populate the same table data, or if
+-- your db's are larger, in which case remote database and table access is useful. 
+-- by https://github.com/ktrnthsnr/ktportfolio 
+
+-- Here is a walkthrough of this process documented below: https://drive.google.com/file/d/18XO3RjJq_bCuStcwmP2QGmRdj3OFiUJv/view
+
+-- How to populate your database tables:
 
 -- LOCALLY
 -- -----------
 
 -- To your local db, you can populate two ways:
 
--- 1) through the UI at http://localhost:3001
+-- 1) through the UI at http://localhost:3002
 
 -- 2) through Insomnia through POST, PUT and DELETE API endpoints
 
 
 -- REMOTELY
 -- ----------
+-- This Node.js app creates the tables through Sequelize onto the Heroku JawsDB add-on, 
+-- however, the tables are empty. How to seed these tables?
 
--- This app creates the tables through Sequelize onto the Heroku JawsDB add-on, however, the tables are empty. How to seed these tables?
-
+-- Note: the first time you push to Heroku, do so with Sequelize sync set to true (option is located here: server.js), so the tables are created.  The second time you push to heroku master, have the Sequelize sync settings set to false.
 
 -- 1) Locally first: Add posts to the application. Login with various users and make posts, comments, etc, ie updating the local mysql db.
 
@@ -36,4 +42,20 @@
 
 -- Then you can INSERT and SELECT on the db tables remotely per your original script you created in step 1 & 2.
 
--- 7) Again if this step is too cumbersome (really it's meant for seeding larger db's) you can also setup the inserts or posts from Insomnia, if you only have a few users or posts as well.
+-- 7) Again if this step is too cumbersome (this process is only useful if moving the same content between environments or for large db's) you can also setup the inserts or posts from Insomnia, if you only have a few users or posts as well.
+
+
+-- Heroku app already created by a teammate, how to connect to another app?
+-------------------------------------------------------------------------------
+-- To connect to an already created Heroku app, 
+
+        -- First add your teammates as collaborators, for example, heroku https://dashboard.heroku.com/apps/techly/
+        -- in the bash, enter $ heroku git:remote -a techly
+        -- check you are connected to the correct new Heroku app, $ git remote -v
+        -- You should see similar results:
+                -- heroku  https://git.heroku.com/techly.git (fetch)
+                -- heroku  https://git.heroku.com/techly.git (push)
+                -- origin  https://github.com/nicolewallace09/techly (fetch)
+                -- origin  https://github.com/nicolewallace09/techly (push) (edited) 
+
+        -- Then push to heroku, $ git push heroko master
