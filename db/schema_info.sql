@@ -1,15 +1,17 @@
--- For Testing locally ONLY:
+-- For Testing locally only:
 --------------------------------------------------------
--- Run this seeds.sql script to seed the tables if needed for any reason.
+-- Run this seeds.sql script to seed the tables if needed for any reason, say if you're recreating the db in another location.
 -- Note, once deployed to Heroku, the tables will be empty to start, so then they can be seeded.
--- After the first seed, the sequelize sync will be set to false, so no need to so so unless you need to change the content.
+-- After the first seed, the sequelize sync will be set to false, so no need to repopulate Heroku,
+-- unless you need to change the content.
 -- You'll need to seed the tables via MySQL Workbench 
 
--- Other:
+-- Review
 ------------
--- Below are a few checks to the tables in the mysql command line 
--- in bash. Create a backup:  mydump -u root -p  techly-KND_db   >  techly-KND_db.sql
--- Login into MySQL command line: $ mysql -u root -p
+-- Below are a few checks to the tables in the mysql command line in bash
+-- Create a backup:   mysqldump -u root -p techly_knd_db > techly_knd_db3.sql
+-- Login into MySQL command line:       $ mysql -u root -p
+-- Here are some useful queries to the mysql database
 
 show tables;
 
