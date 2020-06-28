@@ -1,5 +1,11 @@
-# Techly
+# Techly-KND
 ![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
+
+## GitHub repo
+https://github.com/ktrnthsnr/Techly-KND
+
+## Heroku
+[Techly-KND](https://ktrnthsnr-techly.herokuapp.com/)
 
 ## Description 
 This project is a CMS-style social networking site where developers can publish posts and comment on other developers post. This application follows the MVC paradigm in it's structure and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
@@ -22,13 +28,13 @@ This project is a CMS-style social networking site where developers can publish 
 
 ## Usage 
 This application will allow users to sign up if they are not a member, then once they are logged in they are able to view their user profiles, other users profiles, add new posts, and comment on/like other developers post. Users will also be able to search for keywords and return posts that contains that keyword. <br>
-Please view the site hosted on the Heroku platform - [Techly](https://techly.herokuapp.com/).<br>
-<img src="assets/images/screenshot.png">
-Attached is a walkthrough of the application
+Please view the site hosted on the Heroku platform - [Techly](https://ktrnthsnr-techly.herokuapp.com/).<br>
+<img src="assets/images/Techly-KND.jpg">
+- Attached is a walkthrough of the application
 https://drive.google.com/file/d/1Dnp2MLb1cqJ0OAgde9IxXSN6WUymz0hU/view
 
 ## License 
-This project is license under MIT
+This project is licensed under MIT
 
 ## Contributing 
 Contributors of this project include Nicole Wallace, David Stahl, and Asa Thisner. 
@@ -37,4 +43,4 @@ Contributors of this project include Nicole Wallace, David Stahl, and Asa Thisne
 The tests in this application verifies data formatting using Jest.  
 
 ## Questions
-If you have any questions about this project, please contact me directly at nicole.elisaw@gmail.com. You can view more of my projects at https://github.com/nicolewallace09.
+If you have any questions about this project, please contact 
