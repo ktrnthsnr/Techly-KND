@@ -1,14 +1,14 @@
 -- For Testing locally ONLY:
 --------------------------------------------------------
--- Run this seeds.sql script to seed the tables 
--- Note, once running in Heroku, the tables will be empty
--- You'll need to seed the tables via MySQL Workbench
+-- Run this seeds.sql script to seed the tables if needed for any reason.
+-- Note, once deployed to Heroku, the tables will be empty to start, so then they can be seeded.
+-- After the first seed, the sequelize sync will be set to false, so no need to so so unless you need to change the content.
+-- You'll need to seed the tables via MySQL Workbench 
 
 -- Other:
 ------------
--- check tables in mysql command line after running NPM START
--- seed tables
--- in bash, CD db, then create a backup:  mydump -u root -p  techly_db   >  techly_db.sql
+-- Below are a few checks to the tables in the mysql command line 
+-- in bash. Create a backup:  mydump -u root -p  techly-KND_db   >  techly-KND_db.sql
 -- Login into MySQL command line: $ mysql -u root -p
 
 show tables;
