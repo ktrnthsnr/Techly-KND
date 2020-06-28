@@ -13,6 +13,7 @@ The Node.js application is a social networking forums style site where developer
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
+* [Content](#content)
 * [License](#license)
 * [Contributing](#contributing)
 * [Tests](#tests)
@@ -33,11 +34,15 @@ The site is currently hosted on the Heroku platform - [Techly](https://ktrnthsnr
 - Attached is a walkthrough of the simple social forum type application
 https://drive.google.com/file/d/1Dnp2MLb1cqJ0OAgde9IxXSN6WUymz0hU/view
 
+## Content
+- To move the table data from one environment to another, please see db/howToMoveContent.sql
+- Here is a walkthrough of this process, which includes a local mysqldump database backup, then using those SQL insert statements to populate tables through the Mysql Workbench tool into the JawDB Heroko remote database: https://drive.google.com/file/d/18XO3RjJq_bCuStcwmP2QGmRdj3OFiUJv/view
+
 ## License 
 This project is licensed under MIT
 
 ## Contributing 
-Contributors of this project include Nicole Wallace for the posts and comments, David Stahl for the profile feature, and Asa Thisner for the search box functionality. 
+Contributors of this project include Nicole Wallace for the posts and comments, David Stahl for the profile feature, and Asa Thisner for the search box functionality, and managing the Heroku uploads and content copies from local to Heroku JawsDB through the Mysql workbench.
 
 ## Tests
 The tests in this application verifies data formatting using Jest. To test run npm test  

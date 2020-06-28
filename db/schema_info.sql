@@ -1,17 +1,19 @@
--- For Testing locally only:
---------------------------------------------------------
--- Run this seeds.sql script to seed the tables if needed for any reason, say if you're recreating the db in another location.
--- Note, once deployed to Heroku, the tables will be empty to start, so then they can be seeded.
--- After the first seed, the sequelize sync will be set to false, so no need to repopulate Heroku,
--- unless you need to change the content.
--- You'll need to seed the tables via MySQL Workbench 
+-- The Schema for each of the tables is included below.
+-- Insomnia API endpoints and JSON syntax for each route are also included.
+-- Also included are a few mysql statements that you may use to check the tables.
 
 -- Review
 ------------
--- Below are a few checks to the tables in the mysql command line in bash
+-- Below are a few checks you may do to check the database and tables within the 
+-- mysql command line in bash.
+
 -- Create a backup:   mysqldump -u root -p techly_knd_db > techly_knd_db3.sql
+
 -- Login into MySQL command line:       $ mysql -u root -p
--- Here are some useful queries to the mysql database
+
+-- Here are some useful queries to check the mysql tables:
+
+show databases;
 
 show tables;
 
