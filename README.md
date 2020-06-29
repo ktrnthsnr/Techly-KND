@@ -1,14 +1,14 @@
 # Techly-KND
-![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
+Team forum, where users may post tech issues and peers may respond providing technical assistance.
 
 ## GitHub repo
 https://github.com/ktrnthsnr/Techly-KND
 
 ## Heroku
-[Techly-KND](https://ktrnthsnr-techly.herokuapp.com/)
+https://ktrnthsnr-techly.herokuapp.com/
 
 ## Description 
-The Node.js application is a social networking forums style site where developers may add questions in posts or comment on other developers' posts. This application follows the MVC paradigm in its structure and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication. 
+The Node.js application is a social networking forums style site where developers may add questions in posts or comment on other developers' posts. This application follows the MVC paradigm in its structure and uses Handlebars.js as the templating language, Sequelize as the ORM, and the express-session npm package for authentication.
 
 ## Table of Contents
 * [Installation](#installation)
@@ -39,6 +39,7 @@ https://drive.google.com/file/d/1Dnp2MLb1cqJ0OAgde9IxXSN6WUymz0hU/view
 - Here is a walkthrough of this process, which includes a local mysqldump database backup, then using those SQL insert statements to populate tables through the Mysql Workbench tool into the JawDB Heroko remote database: https://drive.google.com/file/d/18XO3RjJq_bCuStcwmP2QGmRdj3OFiUJv/view
 
 ## License 
+![Github licence](http://img.shields.io/badge/license-MIT-blue.svg)
 This project is licensed under MIT
 
 ## Contributing 
