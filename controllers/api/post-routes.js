@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const sequelize = require('../../config/connection');
 const { Post, User, Vote, Comment } = require('../../models');
-const withAuth = require('../../utils/auth');
+const passportAuth = require('../../utils/auth');
 
 
 // get all posts; GET "/api/posts"
@@ -89,12 +89,12 @@ router.get('/:id', (req,res)=>{
 
 
 // create a post; POST /api/posts
-router.post('/', withAuth, (req,res)=>{
-    //expects {title, post_text, user_id}
+router.post('/', passportAuth, (req,res)=>{
+    //expects {post_text, user_id}
     Post.create({
         
         post_text: req.body.post_text,
-        user_id: req.session.user_id
+        user_id: req.session.passport.user.id
     })
     .then(dbPostData => res.json(dbPostData))
     .catch(err => {
@@ -105,11 +105,11 @@ router.post('/', withAuth, (req,res)=>{
 });
 
 // PUT /api/posts/upvote
-router.put('/upvote', withAuth, (req, res) => {
+router.put('/upvote', passportAuth, (req, res) => {
     // make sure the session exists first
-    if (req.session) {
-      // pass session id along with all destructured properties on req.body
-      Post.upvote({ ...req.body, user_id: req.session.user_id }, { Vote, Comment, User })
+    if (req.session.passport) {
+      // pass session.passport id along with all destructured properties on req.body
+      Post.upvote({ ...req.body, user_id: req.session.passport.user.id }, { Vote, Comment, User })
         .then(updatedVoteData => res.json(updatedVoteData))
         .catch(err => {
           console.log(err);
@@ -121,9 +121,7 @@ router.put('/upvote', withAuth, (req, res) => {
 
 //update a post  PUT /api/posts/1 
 router.put('/:id', (req,res) => {
-    //expects {title, post_text, user_id}
-
-    //if req.body has exact key value pair to match the model, you can just req.body instead 
+    //expects {post_text}
     Post.update(
         {
             // title: req.body.title,
@@ -150,7 +148,7 @@ router.put('/:id', (req,res) => {
 
 
 //delete a post; DELETE /api/posts/1 
-router.delete('/:id', withAuth, (req,res)=>{
+router.delete('/:id', passportAuth, (req,res)=>{
     Post.destroy({
         where: {
             id: req.params.id
@@ -168,18 +166,6 @@ router.delete('/:id', withAuth, (req,res)=>{
         res.status(500).json(err);
     });
 });
-
-
-// this is starter code to only show five posts at a time (still testing this)
-router.get('/test/:pg', async ({params:{pg}},res)=>{
-    const lower = (pg-1)*5;
-    const data = await Post.findAll({
-        order:[["id", "DESC"]],
-        offset:lower,
-        limit:5
-    });
-    console.log(data)
-} )
 
 
 module.exports = router;

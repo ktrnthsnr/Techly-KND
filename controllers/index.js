@@ -6,7 +6,6 @@ const profileRoutes = require('./profile-routes.js');
 
 const singleProfileRoutes = require('./single-profile-routes')
 const searchRoutes = require('./search-routes.js');
-//const profileCardRoutes = require('./profile-card-routes')
 
 
 router.use('/', homeRoutes);
@@ -15,7 +14,6 @@ router.use('/profile', profileRoutes);
 
 router.use('/single-profile', singleProfileRoutes)
 router.use('/search', searchRoutes);
-//router.use('/profile', profileCardRoutes);
 
 
 router.use((req, res) => {

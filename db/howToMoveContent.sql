@@ -1,6 +1,6 @@
 -- This doc: Below are a few ways to populate your mysql database, or move content from 
--- one environment to another, or if you need to quicly populate the same table data, or if
--- your db's are larger, in which case remote database and table access is useful. 
+-- one environment to another, or if you need to quickly populate the same table data, or if
+-- your databases are larger, in which case remote database and table access is useful. 
 -- by https://github.com/ktrnthsnr/ktportfolio 
 
 -- Here is a walkthrough of this process documented below: https://drive.google.com/file/d/18XO3RjJq_bCuStcwmP2QGmRdj3OFiUJv/view
@@ -58,4 +58,4 @@
                 -- origin  https://github.com/nicolewallace09/techly (fetch)
                 -- origin  https://github.com/nicolewallace09/techly (push) (edited) 
 
-        -- Then push to heroku, $ git push heroko master
+        -- Then push to heroku, $ git push heroku master

@@ -1,5 +1,6 @@
 const sequelize = require('../config/connection');
 const { Post, User, Comment } = require('../models');
+const { session } = require('passport');
 const router = require('express').Router();
 
 // rendering all posts to homepage
@@ -33,7 +34,18 @@ router.get('/', (req, res) => {
         .then(dbPostData => {
           // pass a single post object into the homepage template
           const posts = dbPostData.map(post => post.get({ plain: true }));
-          res.render('homepage', { posts, loggedIn: req.session.loggedIn });
+    
+          // defining log-in status
+          let loginStatus;
+          if (typeof req.session.passport != 'undefined') {
+            loginStatus = req.session.passport.user;
+            console.log('loginStatus', loginStatus);
+          } else {
+              loginStatus = false;
+          }
+          
+          res.render('homepage', { posts,  loggedIn: loginStatus }
+          );
         })
         .catch(err => {
           console.log(err);
@@ -92,8 +104,16 @@ router.get('/post/:id', (req, res) => {
         // serialize the data
         const post = dbPostData.get({ plain: true });
   
+        // defining log-in status
+        let loginStatus;
+          if (typeof req.session.passport != 'undefined') {
+            loginStatus =  req.session.passport.user;
+          } else {
+              loginStatus = false;
+          }   
+        
         // pass data to template
-        res.render('single-post', { post, loggedIn: req.session.loggedIn});
+        res.render('single-post', { post, loggedIn: loginStatus });
       })
       .catch(err => {
         console.log(err);
@@ -114,15 +134,13 @@ router.get('/profile/:id', (req, res) => {
       include: [
         {
           model: Post,
-          attributes: ['id', /*'title',*/ 'post_text', 'created_at']
+          attributes: ['id', 'post_text', 'created_at']
         },
         // include the Comment model here:
         {
           model: Comment,
           attributes: ['id', 'comment_text', 'created_at'],
           include: {
-            /*model: Post,
-            attributes: ['title']*/
           }
         },
         {
@@ -138,11 +156,20 @@ router.get('/profile/:id', (req, res) => {
               res.status(404).json({ message: 'No user found with this id'});
               return;
           }
-             // serialize the data
-            const user = { username: username, github: github, linkedin: linkedin}
+             
+          // defining log-in status
+          let loginStatus;
+          if (typeof req.session.passport != 'undefined') {
+            loginStatus =  req.session.passport.user;
+          } else {
+              loginStatus = false;
+          }
+           
+          // serialize the data
+          const user = { username: username, github: github, linkedin: linkedin}
 
-            // pass data to template
-            res.render('single-profile', { user, loggedIn: req.session.loggedIn});
+          // pass data to template
+          res.render('single-profile', { user, loggedIn: loginStatus });
     
       })
       .catch(err => {
@@ -152,8 +179,3 @@ router.get('/profile/:id', (req, res) => {
 });
 
 module.exports = router; 
-
-
-
-
-
